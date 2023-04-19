@@ -1,0 +1,66 @@
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  padding: 0;
+  margin: 0;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+th.col-id, td.col-id {
+  width: 5%;
+}
+
+th.col-title, td.col-title {
+  width: 20%;
+}
+
+
+
+th.col-sentiment, td.col-sentiment {
+  width: 80px;
+}
+
+th {
+  background-color: #2a2a2a;
+  font-weight: bold;
+  color: white;
+}
+
+
+/*
+body {
+    background-color: black;
+    color: white;
+}
+
+.sent-container {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+input.text {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+button.submit {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+}
+*/

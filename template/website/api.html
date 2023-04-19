@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+</head>
+
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'website/css/style.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+    <body>
+
+<div class="sent-container">
+	<form method="POST">
+		{% csrf_token %}
+		<input class="text" type="text" name="text">
+		<select name="model">
+			<option value="5">rubert-5poi</option>
+			<option value="4">rubert-4poi</option>
+		</select>
+		<button class="submit" type="submit">Submit</button>
+	</form>
+
+	{% if result is not None %}
+		<p class="result">Нейтральный: {{ result.0 }}</p>
+		<p class="result">Позитивный: {{ result.1 }}</p>
+		<p class="result">Негативный: {{ result.2 }}</p>
+	{% endif %}
+
+</div>
+
+
+
+
+	<script src="{% static 'website/js/script.js' %}"></script>
+
+</body>
+</html>
+
+
+
+

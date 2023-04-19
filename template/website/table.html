@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+</head>
+
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'website/css/style.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+    <body>
+
+
+ 
+       
+                <div class="table-container">
+                  <table>
+                    <tr>
+                      <th class="col-id">ID</th>
+                      <th class="col-title">TITLE</th>
+                      <th>CONTENT</th>
+                      <th class="col-sentiment">SENTIMENT</th>
+                    </tr>
+                    {% for result in results %}
+                    <tr>
+                      <td class="col-id">{{ result.0 }}</td>
+                      <td>{{ result.1|striptags }}</td>
+                      <td>{{ result.2|striptags }}</td>
+                      {% if result.3 == 1 %}
+                          <td style="background-color: green;">Позитивный</td>
+                        {% elif result.3 == 0 %}
+                          <td style="background-color: #cdcdcd;">Нейтральный</td>
+                        {% elif result.3 == -1 %}
+                          <td style="background-color: red;">Негативный</td>
+                    {% endif %}
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+
+
+
+    <script src="{% static 'website/js/script.js' %}"></script>
+
+
+</body>
+</html>
+
+
+
+
